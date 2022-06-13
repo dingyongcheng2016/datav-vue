@@ -3,8 +3,10 @@ import App from './App.vue'
 import './registerServiceWorker'
 // import router from './router'
 import store from './store'
+import VueCountTo from '@/components/VueCountTo/vue-countTo.vue'
 
 createApp(App)
     .use(store)
     // .use(router)
+    .component('CountTo', VueCountTo)
     .mount('#app')
