@@ -33,7 +33,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/components/Container/utils/index.js", "src/views/Screen/useScreenData.js"  ],
   "exclude": [
     "node_modules"
   ]
