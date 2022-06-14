@@ -18,6 +18,25 @@
                             ref="totalUser"
                         />
                     </div>
+                    <div class="left2">
+                        <average-age
+                            :data="ageData"
+                            :avg-age="+userData.averageAge || 0"
+                            ref="averageAge"
+                        />
+                    </div>
+                    <div class="left3">
+                        <total-device :data="deviceData" />
+                    </div>
+                    <div class="left4">
+                        <total-gender :data="userData.gender" />
+                    </div>
+                     <div class="left5">
+                        <line-chart :data="userData.rider" />
+                    </div>
+                    <div class="left6">
+                        <bar-chart :data="userData.category" />
+                    </div>
                 </div>
                 <div class="right"></div>
             </div>
@@ -33,8 +52,13 @@
     import Loading from '@/components/Loading/index.vue'
     import Container from '@/components/Container/index.vue'
     import TopHeader from '@/components/TopHeader2/index.vue'
-    import Separator from '@/components/Separator/index'
-    import TotalUser from '@/components/TotalUser/index'
+    import Separator from '@/components/Separator/index.vue'
+    import TotalUser from '@/components/TotalUser/index.vue'
+    import AverageAge from '@/components/AverageAge/index.vue'
+    import TotalDevice from '@/components/TotalDevice/index.vue'
+    import TotalGender from '@/components/TotalGender/index.vue'
+    import LineChart from '@/components/LineChart/index.vue'
+    import BarChart from '@/components/BarChart/index'
 
     export default defineComponent({
         components: {
@@ -42,10 +66,15 @@
             Container,
             TopHeader,
             Separator,
-            TotalUser
+            TotalUser,
+            AverageAge,
+            TotalDevice,
+            TotalGender,
+            LineChart,
+            BarChart
         },
         setup () {
-            const context = getCurrentInstance()?.appContext
+            const context = getCurrentInstance()?.ctx
             const { ready, userData, ageData, deviceData, realTimeOrder, mapData } = useScreenData(context, { once: false })
 
             return {

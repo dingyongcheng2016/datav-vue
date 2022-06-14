@@ -38,8 +38,8 @@ const createData = async ({ userData, ageData, deviceData, realTimeOrder }, cont
     date: [...realTimeOrder.value.date, getNowTime()],
     data: [...realTimeOrder.value.data, userData.value.realTimeOrder]
   }
-  // context.$refs.totalUser.updateStartVal()
-  // context.$refs.averageAge.update()
+  context.$refs.totalUser.updateStartVal()
+  context.$refs.averageAge.update()
 }
 
 const screenReady = ({
