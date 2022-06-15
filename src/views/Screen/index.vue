@@ -47,6 +47,25 @@
                         :data="['ALL', '北京', '上海', '深圳', '杭州', '南京', '武汉']"
                         />
                     </div>
+                    <div class="right-bottom">
+                        <div class="right-left">
+                            <div class="right-left1">
+                                <earth :data="mapData" />
+                            </div>
+                                <div class="right-left2">
+                                    <country-category
+                                        :data="['订单量', '销售额', '用户数', '退单量']"
+                                        :color="['rgb(178, 209, 126)', 'rgb(116, 166, 49)']"
+                                    />
+                                </div>
+                                <div class="right-left3">
+                                    <dv-border-box-8 :color="['rgb(66, 68, 70)', 'rgb(251,253,142)']">
+                                        <average-view :data="realTimeOrder" />
+                                    </dv-border-box-8>
+                                </div>
+                        </div>
+                        <div class="right-right"></div>
+                    </div>
                 </div>
             </div>
             
@@ -70,6 +89,8 @@
     import BarChart from '@/components/BarChart/index.vue'
     import CenterHeader from '@/components/CenterHeader/index.vue'
     import CountryCategory from '@/components/CountryCategory/index.vue'
+    import AverageView from '@/components/AverageView/index.vue'
+    import Earth from '@/components/Earth/datavMap.vue'
 
     export default defineComponent({
         components: {
@@ -84,7 +105,9 @@
             LineChart,
             BarChart,
             CenterHeader,
-            CountryCategory
+            CountryCategory,
+            AverageView,
+            Earth
         },
         setup () {
             const context = getCurrentInstance()?.ctx
