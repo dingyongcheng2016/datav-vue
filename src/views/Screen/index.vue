@@ -38,7 +38,16 @@
                         <bar-chart :data="userData.category" />
                     </div>
                 </div>
-                <div class="right"></div>
+                <div class="right">
+                    <div class="right-top1">
+                        <center-header :data="userData" />
+                    </div>
+                    <div class="right-top2">
+                        <country-category
+                        :data="['ALL', '北京', '上海', '深圳', '杭州', '南京', '武汉']"
+                        />
+                    </div>
+                </div>
             </div>
             
         </Container>
@@ -58,7 +67,9 @@
     import TotalDevice from '@/components/TotalDevice/index.vue'
     import TotalGender from '@/components/TotalGender/index.vue'
     import LineChart from '@/components/LineChart/index.vue'
-    import BarChart from '@/components/BarChart/index'
+    import BarChart from '@/components/BarChart/index.vue'
+    import CenterHeader from '@/components/CenterHeader/index.vue'
+    import CountryCategory from '@/components/CountryCategory/index.vue'
 
     export default defineComponent({
         components: {
@@ -71,7 +82,9 @@
             TotalDevice,
             TotalGender,
             LineChart,
-            BarChart
+            BarChart,
+            CenterHeader,
+            CountryCategory
         },
         setup () {
             const context = getCurrentInstance()?.ctx
@@ -153,7 +166,7 @@
                     }
                 }
 
-                .right {
+               .right {
                     flex: 1;
                     display: flex;
                     flex-direction: column;
@@ -161,6 +174,77 @@
                     margin: 0 10px;
                     max-width: 2960px;
                     overflow: hidden;
+
+                    .right-top1 {
+                        height: 206px;
+                        margin-bottom: 20px;
+                    }
+
+                    .right-top2 {
+                        height: 48px;
+                        margin-bottom: 20px;
+                    }
+
+                    .right-bottom {
+                        flex: 1;
+                        display: flex;
+
+                        .right-left {
+                        display: flex;
+                        flex-direction: column;
+                        width: 1917px;
+
+                        .right-left1 {
+                            height: 999px;
+                        }
+
+                        .right-left2 {
+                            height: 80px;
+                            padding-top: 20px;
+                            box-sizing: border-box;
+                        }
+
+                        .right-left3 {
+                            height: 350px;
+                            margin-top: 10px;
+
+                            .dv-border-box-8 {
+                                width: 100%;
+                                height: 100%;
+                                padding: 5px;
+                                box-sizing: border-box;
+                                background: rgb(66, 68, 70);
+                                border-radius: 10px;
+                                box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+                                }
+                            }
+
+                            .right-left4 {
+                                height: 220px;
+                                margin-top: 10px;
+                            }
+                        }
+
+                        .right-right {
+                            flex: 1;
+                            display: flex;
+                            flex-direction: column;
+                            margin-left: 10px;
+
+                            .right-right1 {
+                                width: 100%;
+                                height: 999px;
+                                padding-right: 10px;
+                                box-sizing: border-box;
+                            }
+
+                            .right-right2 {
+                                width: 100%;
+                                height: 650px;
+                                margin-top: 20px;
+                            }
+                        }
+                    }
                 }
 
             }
